@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contato · Monta Camisa</title>
+<meta name="description" content="Fale com a Monta Camisa: dúvidas sobre o editor, pedidos de estampas novas, licença e parcerias.">
+<link rel="canonical" href="https://montacamisa.com.br/suporte/">
+<meta property="og:title" content="Contato">
+<meta property="og:description" content="Fale com a Monta Camisa: dúvidas sobre o editor, pedidos de estampas novas, licença e parcerias.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://montacamisa.com.br/suporte/">
+<meta property="og:site_name" content="Monta Camisa">
+<meta property="og:image" content="https://montacamisa.com.br/static/img/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Grotesk:wght@400;500;600;700&display=swap">
+<meta name="theme-color" content="#0b0b0f">
+<link rel="stylesheet" href="/static/estilo.css?v=bea841a5">
+
+
+</head>
+<body class="">
+<header class="topo">
+  <div class="container">
+    <a class="logo" href="/"><span class="marca">◆</span>Monta Camisa</a>
+    <nav>
+      
+      <a href="/estampas/">Estampas</a>
+      <a href="/colecao/natal/">Natal</a>
+      <a href="/como-usar/">Como usar</a>
+      <a href="/licenca/">Licença</a>
+      <a href="/criar/" class="btn-sm">Abrir o editor</a>
+      
+    </nav>
+  </div>
+</header>
+<main class="container">
+
+<p class="migalhas"><a href="/">Início</a> › Contato</p>
+<article class="texto">
+  <h1>Contato</h1>
+  <p>Sentiu falta de algum tema? Achou um problema? Escreva: quem responde é o <strong>Raphael</strong>, criador do projeto, normalmente <strong>em até 1 dia útil</strong>.</p>
+<div class="suporte-grid">
+<form id="form-suporte" class="suporte-form" novalidate>
+  <input type="hidden" name="site" value="montacamisa">
+  <input type="text" name="site_web" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px" aria-hidden="true">
+  <label>Seu nome<input name="nome" required autocomplete="name"></label>
+  <label>Seu e‑mail<input name="email" type="email" required autocomplete="email"></label>
+  <label>WhatsApp <small>(opcional)</small><input name="telefone" inputmode="tel" placeholder="(61) 99999-9999" autocomplete="tel"></label>
+  <label class="largo">Assunto
+    <select name="assunto">
+      <option>Dúvida sobre o editor ou o download</option>
+      <option>Pedido de estampa ou coleção nova</option>
+      <option>Problema de licença ou direito autoral</option>
+      <option>Sugestão ou parceria</option>
+      <option>Outro assunto</option>
+    </select>
+  </label>
+  <label class="largo">Mensagem<textarea name="mensagem" rows="6" required minlength="10" placeholder="Conte o que você precisa. Pedidos de estampa nova são muito bem-vindos."></textarea></label>
+  <button class="btn btn-primario largo" type="submit">Enviar mensagem →</button>
+  <p class="dica centro" id="suporte-msg" aria-live="polite"></p>
+</form>
+<aside class="suporte-lado">
+  <h3>Outros caminhos</h3>
+  <p><strong>E‑mail:</strong> <a href="mailto:rphsaigg@gmail.com?subject=Monta%20Camisa">rphsaigg@gmail.com</a></p>
+  <p><strong>Pedidos de estampa:</strong> diga o tema e para que vai usar. As mais pedidas viram coleção.</p>
+  <p><strong>Direito autoral:</strong> se encontrar algo que não deveria estar aqui, avise que retiramos.</p>
+</aside>
+</div>
+
+<script>
+(function(){
+  var f=document.getElementById('form-suporte'),m=document.getElementById('suporte-msg');
+  var u=new URLSearchParams(location.search);if(u.get('pedido'))f.pedido.value=u.get('pedido');
+  f.addEventListener('submit',function(e){
+    e.preventDefault();
+    if(!f.checkValidity()){f.reportValidity();return}
+    fetch('/static/config.json').then(function(r){return r.json()}).then(function(cfg){
+      if(!cfg.worker_url)throw new Error('Formulário indisponível no momento.');
+      var b=f.querySelector('button');b.disabled=true;m.className='dica centro';m.textContent='Enviando…';
+      var d=Object.fromEntries(new FormData(f).entries());d.pagina=location.href;
+      return fetch(cfg.worker_url+'/contato',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(d)})
+        .then(function(r){return r.json()}).then(function(r){
+          if(r.erro)throw new Error(r.erro);
+          m.className='dica centro ok';m.textContent='Recebemos sua mensagem! Respondemos em até 1 dia útil no e‑mail '+d.email+'.';f.reset();
+        }).finally(function(){b.disabled=false});
+    }).catch(function(err){m.className='dica centro erro';m.textContent=(err.message||'Não foi possível enviar agora.')+' Você também pode escrever para rphsaigg@gmail.com.'});
+  });
+})();
+</script>
+  <p class="cta-row"><a class="btn btn-primario" href="/estampas/">Ver as estampas grátis</a><a class="btn btn-sec" href="/criar/">Abrir o editor</a></p>
+  
+</article>
+
+</main>
+<footer class="rodape">
+  <div class="container">
+    <div class="marca-grande">Monta Camisa</div>
+    
+    <p>© 2026 Monta Camisa · <a href="/estampas/">Estampas</a> · <a href="/criar/">Editor</a> · <a href="/como-usar/">Como usar</a> · <a href="/licenca/">Licença e créditos</a> · <a href="/privacidade/">Privacidade</a> · <a href="/suporte/">Contato</a></p>
+    <p class="aviso">Acervo gratuito de estampas para camiseta, caneca e sublimação. Projeto de Saigg Digital · Raphael Saigg Santos.</p>
+    
+  </div>
+</footer>
+
+<script>
+// medição própria, sem cookies (Worker saigg-app, caminhos com prefixo /mc): visitas e downloads
+(function(){
+  if(location.hostname!=='montacamisa.com.br'||navigator.doNotTrack==='1')return;
+  var API='https://saigg-app.montacamisa.workers.dev/v';
+  function envia(d){try{navigator.sendBeacon(API,JSON.stringify(d))}catch(e){}}
+  var q=new URLSearchParams(location.search);
+  envia({p:'/mc'+location.pathname,r:document.referrer,u:q.get('utm_source')||q.get('ref')||''});
+  window.mcEvento=function(ev,alvo){envia({e:ev,p:'/mc'+location.pathname,a:alvo||''});};
+})();
+</script>
+
+
+</body>
+</html>

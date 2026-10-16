@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Disallow: /pedido/
+Sitemap: https://montacamisa.com.br/sitemap.xml

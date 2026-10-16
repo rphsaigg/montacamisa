@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacidade · Monta Camisa</title>
+<meta name="description" content="A Monta Camisa não pede cadastro e não usa cookies. Veja o pouco que é registrado e como falar conosco.">
+<link rel="canonical" href="https://montacamisa.com.br/privacidade/">
+<meta property="og:title" content="Privacidade">
+<meta property="og:description" content="A Monta Camisa não pede cadastro e não usa cookies. Veja o pouco que é registrado e como falar conosco.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://montacamisa.com.br/privacidade/">
+<meta property="og:site_name" content="Monta Camisa">
+<meta property="og:image" content="https://montacamisa.com.br/static/img/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Grotesk:wght@400;500;600;700&display=swap">
+<meta name="theme-color" content="#0b0b0f">
+<link rel="stylesheet" href="/static/estilo.css?v=bea841a5">
+
+
+</head>
+<body class="">
+<header class="topo">
+  <div class="container">
+    <a class="logo" href="/"><span class="marca">◆</span>Monta Camisa</a>
+    <nav>
+      
+      <a href="/estampas/">Estampas</a>
+      <a href="/colecao/natal/">Natal</a>
+      <a href="/como-usar/">Como usar</a>
+      <a href="/licenca/">Licença</a>
+      <a href="/criar/" class="btn-sm">Abrir o editor</a>
+      
+    </nav>
+  </div>
+</header>
+<main class="container">
+
+<p class="migalhas"><a href="/">Início</a> › Privacidade</p>
+<article class="texto">
+  <h1>Privacidade</h1>
+  <ul>
+<li><strong>Sem cadastro e sem cookies.</strong> Você baixa e edita sem informar nada.</li>
+<li><strong>No editor</strong>, o rascunho fica salvo apenas no seu navegador. Os PNGs são gerados no seu próprio aparelho.</li>
+<li><strong>IA do editor:</strong> o texto que você descreve é enviado ao nosso servidor para gerar a imagem, que fica guardada por até 7 dias e depois é apagada. Para respeitar o limite diário, contamos os pedidos por endereço de rede. Essa contagem é apagada no fim do dia.</li>
+<li><strong>Medição de uso:</strong> contamos visitas por página e downloads de forma anônima (sem cookies e sem identificar você), para saber quais estampas são úteis. Se o seu navegador pede &ldquo;não rastrear&rdquo;, nada é contado.</li>
+<li><strong>Contato:</strong> se você nos escreve pelo formulário, usamos nome e e‑mail só para responder.</li>
+<li>Para acessar, corrigir ou excluir dados, escreva para o e‑mail da página de <a href="/suporte/">contato</a>.</li>
+</ul>
+  <p class="cta-row"><a class="btn btn-primario" href="/estampas/">Ver as estampas grátis</a><a class="btn btn-sec" href="/criar/">Abrir o editor</a></p>
+  
+</article>
+
+</main>
+<footer class="rodape">
+  <div class="container">
+    <div class="marca-grande">Monta Camisa</div>
+    
+    <p>© 2026 Monta Camisa · <a href="/estampas/">Estampas</a> · <a href="/criar/">Editor</a> · <a href="/como-usar/">Como usar</a> · <a href="/licenca/">Licença e créditos</a> · <a href="/privacidade/">Privacidade</a> · <a href="/suporte/">Contato</a></p>
+    <p class="aviso">Acervo gratuito de estampas para camiseta, caneca e sublimação. Projeto de Saigg Digital · Raphael Saigg Santos.</p>
+    
+  </div>
+</footer>
+
+<script>
+// medição própria, sem cookies (Worker saigg-app, caminhos com prefixo /mc): visitas e downloads
+(function(){
+  if(location.hostname!=='montacamisa.com.br'||navigator.doNotTrack==='1')return;
+  var API='https://saigg-app.montacamisa.workers.dev/v';
+  function envia(d){try{navigator.sendBeacon(API,JSON.stringify(d))}catch(e){}}
+  var q=new URLSearchParams(location.search);
+  envia({p:'/mc'+location.pathname,r:document.referrer,u:q.get('utm_source')||q.get('ref')||''});
+  window.mcEvento=function(ev,alvo){envia({e:ev,p:'/mc'+location.pathname,a:alvo||''});};
+})();
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,190 @@
+{
+ "categorias": {
+  "formas": "Formas",
+  "natureza": "Natureza",
+  "rotina": "Rotina & hobbies",
+  "profissoes": "Profissões"
+ },
+ "estampas": [
+  {
+   "slug": "coracao",
+   "categoria": "formas",
+   "rotulo": "Coração",
+   "arquivo": "/static/estampas/proprias/coracao.svg"
+  },
+  {
+   "slug": "estrela",
+   "categoria": "formas",
+   "rotulo": "Estrela",
+   "arquivo": "/static/estampas/proprias/estrela.svg"
+  },
+  {
+   "slug": "raio",
+   "categoria": "formas",
+   "rotulo": "Raio",
+   "arquivo": "/static/estampas/proprias/raio.svg"
+  },
+  {
+   "slug": "coroa",
+   "categoria": "formas",
+   "rotulo": "Coroa",
+   "arquivo": "/static/estampas/proprias/coroa.svg"
+  },
+  {
+   "slug": "diamante",
+   "categoria": "formas",
+   "rotulo": "Diamante",
+   "arquivo": "/static/estampas/proprias/diamante.svg"
+  },
+  {
+   "slug": "hexagono",
+   "categoria": "formas",
+   "rotulo": "Hexágono",
+   "arquivo": "/static/estampas/proprias/hexagono.svg"
+  },
+  {
+   "slug": "circulo-faixa",
+   "categoria": "formas",
+   "rotulo": "Círculo com faixa",
+   "arquivo": "/static/estampas/proprias/circulo-faixa.svg"
+  },
+  {
+   "slug": "sol",
+   "categoria": "natureza",
+   "rotulo": "Sol",
+   "arquivo": "/static/estampas/proprias/sol.svg"
+  },
+  {
+   "slug": "lua",
+   "categoria": "natureza",
+   "rotulo": "Lua",
+   "arquivo": "/static/estampas/proprias/lua.svg"
+  },
+  {
+   "slug": "montanha",
+   "categoria": "natureza",
+   "rotulo": "Montanhas",
+   "arquivo": "/static/estampas/proprias/montanha.svg"
+  },
+  {
+   "slug": "onda",
+   "categoria": "natureza",
+   "rotulo": "Onda",
+   "arquivo": "/static/estampas/proprias/onda.svg"
+  },
+  {
+   "slug": "folha",
+   "categoria": "natureza",
+   "rotulo": "Folha",
+   "arquivo": "/static/estampas/proprias/folha.svg"
+  },
+  {
+   "slug": "pata",
+   "categoria": "natureza",
+   "rotulo": "Pata de pet",
+   "arquivo": "/static/estampas/proprias/pata.svg"
+  },
+  {
+   "slug": "abacaxi",
+   "categoria": "natureza",
+   "rotulo": "Abacaxi",
+   "arquivo": "/static/estampas/proprias/abacaxi.svg"
+  },
+  {
+   "slug": "cafe",
+   "categoria": "rotina",
+   "rotulo": "Xícara de café",
+   "arquivo": "/static/estampas/proprias/cafe.svg"
+  },
+  {
+   "slug": "bike",
+   "categoria": "rotina",
+   "rotulo": "Bicicleta",
+   "arquivo": "/static/estampas/proprias/bike.svg"
+  },
+  {
+   "slug": "headphone",
+   "categoria": "rotina",
+   "rotulo": "Fone de ouvido",
+   "arquivo": "/static/estampas/proprias/headphone.svg"
+  },
+  {
+   "slug": "game",
+   "categoria": "rotina",
+   "rotulo": "Controle de game",
+   "arquivo": "/static/estampas/proprias/game.svg"
+  },
+  {
+   "slug": "halter",
+   "categoria": "rotina",
+   "rotulo": "Halter (treino)",
+   "arquivo": "/static/estampas/proprias/halter.svg"
+  },
+  {
+   "slug": "musica",
+   "categoria": "rotina",
+   "rotulo": "Nota musical",
+   "arquivo": "/static/estampas/proprias/musica.svg"
+  },
+  {
+   "slug": "aviao-papel",
+   "categoria": "rotina",
+   "rotulo": "Avião de papel",
+   "arquivo": "/static/estampas/proprias/aviao-papel.svg"
+  },
+  {
+   "slug": "smile",
+   "categoria": "rotina",
+   "rotulo": "Sorriso",
+   "arquivo": "/static/estampas/proprias/smile.svg"
+  },
+  {
+   "slug": "bolo",
+   "categoria": "profissoes",
+   "rotulo": "Bolo (confeitaria)",
+   "arquivo": "/static/estampas/proprias/bolo.svg"
+  },
+  {
+   "slug": "tesoura",
+   "categoria": "profissoes",
+   "rotulo": "Tesoura (beleza, costura)",
+   "arquivo": "/static/estampas/proprias/tesoura.svg"
+  },
+  {
+   "slug": "chave",
+   "categoria": "profissoes",
+   "rotulo": "Chave inglesa (manutenção)",
+   "arquivo": "/static/estampas/proprias/chave.svg"
+  },
+  {
+   "slug": "pincel",
+   "categoria": "profissoes",
+   "rotulo": "Pincel (arte, pintura)",
+   "arquivo": "/static/estampas/proprias/pincel.svg"
+  },
+  {
+   "slug": "planta",
+   "categoria": "profissoes",
+   "rotulo": "Planta (jardim, natureza)",
+   "arquivo": "/static/estampas/proprias/planta.svg"
+  },
+  {
+   "slug": "ancora",
+   "categoria": "profissoes",
+   "rotulo": "Âncora",
+   "arquivo": "/static/estampas/proprias/ancora.svg"
+  },
+  {
+   "slug": "balao",
+   "categoria": "formas",
+   "rotulo": "Balão de fala",
+   "arquivo": "/static/estampas/proprias/balao.svg"
+  },
+  {
+   "slug": "setas",
+   "categoria": "formas",
+   "rotulo": "Setas em círculo",
+   "arquivo": "/static/estampas/proprias/setas.svg"
+  }
+ ]
+}

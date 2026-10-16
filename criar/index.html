@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Editor de estampas grátis · Monta Camisa</title>
+<meta name="description" content="Monte sua arte para camiseta, caneca ou sublimação: texto, 3.700 estampas, imagem própria ou IA. Baixe em PNG 300 dpi, grátis.">
+<link rel="canonical" href="https://montacamisa.com.br/criar/">
+<meta property="og:title" content="Editor de estampas grátis">
+<meta property="og:description" content="Monte sua arte para camiseta, caneca ou sublimação: texto, 3.700 estampas, imagem própria ou IA. Baixe em PNG 300 dpi, grátis.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://montacamisa.com.br/criar/">
+<meta property="og:site_name" content="Monta Camisa">
+<meta property="og:image" content="https://montacamisa.com.br/static/img/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Grotesk:wght@400;500;600;700&display=swap">
+<meta name="theme-color" content="#0b0b0f">
+<link rel="stylesheet" href="/static/estilo.css?v=bea841a5">
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&amp;family=Bebas+Neue&amp;family=Archivo+Black&amp;family=Alfa+Slab+One&amp;family=Black+Ops+One&amp;family=Bangers&amp;family=Luckiest+Guy&amp;family=Lilita+One&amp;family=Titan+One&amp;family=Chewy&amp;family=Fredoka:wght@700&amp;family=Sigmar&amp;family=Bungee&amp;family=Bungee+Shade&amp;family=Rubik+Mono+One&amp;family=Monoton&amp;family=Righteous&amp;family=Lobster&amp;family=Shrikhand&amp;family=Abril+Fatface&amp;family=Rye&amp;family=Graduate&amp;family=Ultra&amp;family=Passion+One&amp;family=Oswald:wght@700&amp;family=Playfair+Display:wght@700&amp;family=Cinzel:wght@700&amp;family=Cormorant+Garamond:wght@700&amp;family=Montserrat:wght@800&amp;family=Great+Vibes&amp;family=Pacifico&amp;family=Dancing+Script:wght@700&amp;family=Satisfy&amp;family=Kaushan+Script&amp;family=Caveat:wght@700&amp;family=Amatic+SC:wght@700&amp;family=Permanent+Marker&amp;family=Rock+Salt&amp;family=Rubik+Wet+Paint&amp;family=Sedgwick+Ave+Display&amp;family=Rubik+Spray+Paint&amp;family=Freckle+Face&amp;family=Rubik+Glitch&amp;family=Rubik+Dirt&amp;family=Trade+Winds&amp;family=Faster+One&amp;family=Shojumaru&amp;family=Rubik+Beastly&amp;family=Creepster&amp;family=Nosifer&amp;family=Metal+Mania&amp;family=Pirata+One&amp;family=Press+Start+2P&amp;family=Silkscreen&amp;display=swap">
+
+</head>
+<body class="editor-body">
+<header class="topo">
+  <div class="container">
+    <a class="logo" href="/"><span class="marca">◆</span>Monta Camisa</a>
+    <nav>
+      
+      <a href="/estampas/">Estampas</a>
+      <a href="/colecao/natal/">Natal</a>
+      <a href="/como-usar/">Como usar</a>
+      <a href="/licenca/">Licença</a>
+      <a href="/criar/" class="btn-sm">Abrir o editor</a>
+      
+    </nav>
+  </div>
+</header>
+<main class="editor">
+
+
+<!-- Painel esquerdo: ferramentas -->
+<aside class="painel ferramentas">
+  <div class="abas" role="tablist">
+    <button class="aba ativa" data-aba="modelos">✨ Modelos</button>
+    <button class="aba" data-aba="texto">✏️ Texto</button>
+    <button class="aba" data-aba="elementos">🏷️ Elementos</button>
+    <button class="aba" data-aba="estampas">🎨 Estampas</button>
+    <button class="aba" data-aba="imagem">🖼️ Imagem</button>
+    <button class="aba aba-ia" data-aba="ia">🪄 IA</button>
+  </div>
+
+  <section class="aba-conteudo ativa" data-aba="modelos">
+    <p class="dica topo">Comece por um modelo e troque só o nome. Tudo continua editável.</p>
+    <div class="grade-modelos" id="grade-modelos"></div>
+    <h4>Frases prontas</h4>
+    <div class="lista-frases" id="lista-frases"></div>
+  </section>
+
+  <section class="aba-conteudo" data-aba="texto">
+    <label>Seu texto
+      <textarea id="txt-novo" rows="2" placeholder="Ex.: Maria, Mãe de Pet, Time Silva…" maxlength="80"></textarea>
+    </label>
+    <div class="filtro-cats" id="filtro-estilos"></div>
+    <div class="grade-fontes" id="grade-fontes"></div>
+    <button class="btn btn-primario largo" id="btn-add-texto">＋ Adicionar texto</button>
+    <p class="dica">Depois de adicionar, dê dois cliques no texto para editar direto na camiseta. Na barra acima da camiseta você muda cor, contorno, sombra e arco.</p>
+  </section>
+
+  <section class="aba-conteudo" data-aba="elementos">
+    <p class="dica topo">Molduras, faixas, louros e explosões para colocar o nome em cima. Mudam de cor.</p>
+    <div class="filtro-cats" id="filtro-elementos"></div>
+    <div class="grade-estampas" id="grade-elementos"></div>
+  </section>
+
+  <section class="aba-conteudo" data-aba="estampas">
+    <input type="search" id="busca-estampas" placeholder="Buscar: cachorro, café, coração, futebol…" autocomplete="off">
+    <div class="filtro-cats" id="filtro-cats"></div>
+    <div class="grade-estampas" id="grade-estampas"></div>
+    <p class="dica"><span id="qtd-estampas"></span> · silhuetas (⬛) mudam de cor; coloridas não.</p>
+  </section>
+
+  <section class="aba-conteudo" data-aba="imagem">
+    <label class="upload" for="arq-imagem">
+      <span class="emoji">📤</span>
+      <strong>Enviar imagem</strong>
+      <span>PNG ou JPG · até 15 MB · PNG com fundo transparente fica melhor</span>
+      <input type="file" id="arq-imagem" accept="image/png,image/jpeg,image/webp" hidden>
+    </label>
+    <p class="dica">Para impressão nítida, use imagens com pelo menos 1500 px no lado maior. O editor avisa se a resolução estiver baixa.</p>
+    <p class="dica">A imagem fica só no seu navegador. Use apenas imagens que você tem direito de usar: evite marcas registradas e personagens.</p>
+  </section>
+  <section class="aba-conteudo" data-aba="ia">
+    <p class="dica">Descreva a estampa que você imagina e a IA desenha para você. Palavras entre aspas viram texto na arte.</p>
+    <textarea id="ia-prompt" rows="3" maxlength="400" placeholder='Ex.: gato astronauta flutuando entre planetas, frase "SEM GRAVIDADE"'></textarea>
+    <div class="ia-estilos" id="ia-estilos">
+      <button data-estilo="auto" class="ativo">Auto</button><button data-estilo="cartoon">Cartoon</button><button data-estilo="street">Street art</button>
+      <button data-estilo="doodle">Doodle</button><button data-estilo="aquarela">Aquarela</button><button data-estilo="3d">3D</button>
+      <button data-estilo="tipografia">Tipografia</button><button data-estilo="retro">Retrô</button><button data-estilo="minimal">Minimalista</button>
+      <button data-estilo="anime">Anime</button><button data-estilo="geometrico">Geométrico</button><button data-estilo="floral">Floral</button>
+    </div>
+    <label class="check"><input type="checkbox" id="ia-sem-fundo" checked> Remover o fundo (estampa recortada)</label>
+    <button class="btn btn-primario largo" id="ia-gerar">🪄 Gerar estampa</button>
+    <p class="dica centro" id="ia-status"></p>
+    <div class="ia-resultados" id="ia-resultados"></div>
+    <p class="dica">Imagens geradas têm 1024 px: ficam nítidas até ~15 cm de largura na peça. Você pode gerar até 12 por dia.</p>
+  </section>
+</aside>
+
+<!-- Centro: camiseta -->
+<section class="palco">
+  <div class="palco-topo">
+    <div class="lados" id="lados"></div>
+    <div class="acoes-palco">
+      <button id="btn-desfazer" title="Desfazer (Ctrl+Z)">↶</button>
+      <button id="btn-refazer" title="Refazer (Ctrl+Y)">↷</button>
+      <button id="btn-limpar" title="Limpar este lado">🗑</button>
+    </div>
+  </div>
+
+  <!-- Barra de propriedades do objeto selecionado -->
+  <div class="props" id="props" hidden>
+    <div class="grupo cores" id="props-cores"></div>
+    <div class="grupo so-texto">
+      <select id="prop-fonte" title="Fonte"></select>
+      <button id="prop-contorno" title="Contorno">◎</button>
+      <button id="prop-sombra" title="Sombra">◧</button>
+      <button id="prop-arco" title="Texto em arco">⌒</button>
+      <label class="range" title="Espaçamento entre letras">↔<input type="range" id="prop-espaco" min="-100" max="600" value="0"></label>
+      <button id="prop-caixa" title="MAIÚSCULAS / minúsculas">Aa</button>
+    </div>
+    <div class="grupo">
+      <button id="prop-centrar" title="Centralizar na camiseta">⊕</button>
+      <button id="prop-espelhar" title="Espelhar">⇋</button>
+      <button id="prop-frente" title="Trazer para frente">⬆</button>
+      <button id="prop-tras" title="Enviar para trás">⬇</button>
+      <button id="prop-duplicar" title="Duplicar">⧉</button>
+      <button id="prop-excluir" class="perigo" title="Excluir (Delete)">✕</button>
+    </div>
+  </div>
+
+  <div class="canvas-wrap" id="canvas-wrap">
+    <canvas id="c" width="600" height="700"></canvas>
+    <div class="aviso-area" id="aviso-area" hidden>⚠️ Parte da arte está fora da área de impressão e será cortada</div>
+  </div>
+  <p class="dica centro">Arraste para mover · alças para redimensionar e girar · dois cliques no texto para editar</p>
+</section>
+
+<!-- Painel direito: produto e compra -->
+<aside class="painel produto">
+  <div class="opcao">
+    <span class="rotulo">Ver a arte em</span>
+    <div class="produtos" id="produtos">
+      <button class="prod ativo" data-slug="classic" title="Camiseta Classic"><span>👕</span>Camiseta Classic</button><button class="prod" data-slug="oversized" title="Camiseta Oversized"><span>🧥</span>Camiseta Oversized</button><button class="prod" data-slug="regata" title="Regata"><span>🎽</span>Regata</button><button class="prod" data-slug="jaqueta" title="Jaqueta de moletom (zíper)"><span>🧥</span>Jaqueta de moletom (zíper)</button><button class="prod" data-slug="moletom" title="Moletom canguru"><span>🧶</span>Moletom canguru</button><button class="prod" data-slug="ecobag" title="Ecobag"><span>👜</span>Ecobag</button>
+    </div>
+  </div>
+  <h1 class="titulo-editor" id="prod-nome">Camiseta Classic</h1>
+  <p class="descricao-prod" id="prod-desc" hidden>100% algodão, gola redonda, malha 30.1. A básica que todo mundo tem — agora com a sua cara.</p>
+
+  <div class="opcao">
+    <span class="rotulo">Cor <b id="cor-nome">Branco</b></span>
+    <div class="cores-camisa" id="cores-camisa"></div>
+  </div>
+
+  <div class="opcao" id="opcao-modelagem">
+    <span class="rotulo">Modelagem</span>
+    <div class="segmentos" id="modelagens"></div>
+  </div>
+
+  <div hidden>
+  <div class="opcao">
+    <span class="rotulo">Tamanho <a href="#" id="link-medidas">tabela de medidas</a></span>
+    <div class="segmentos" id="tamanhos"></div>
+  </div>
+
+  <div class="opcao">
+    <span class="rotulo">Quantidade</span>
+    <div class="qtd"><button id="qtd-menos">−</button><input id="qtd" type="number" min="1" max="20" value="1"><button id="qtd-mais">＋</button></div>
+  </div>
+
+  <div class="resumo-preco">
+    <div class="linha"><span id="preco-rotulo">Camiseta Classic</span><span id="preco-base">R$ 79,90</span></div>
+    <div id="linhas-extras"></div>
+    <div class="linha total"><span>Total</span><span id="preco-total">R$ 79,90</span></div>
+    <small>Frete calculado no próximo passo pelo CEP. Grátis acima de R$ 199.</small>
+  </div>
+
+  </div>
+
+  <div class="acoes-compra">
+    
+    <button class="btn btn-primario largo grande" id="btn-baixar-arte">⬇ Baixar arte para impressão</button>
+    <button class="btn btn-sec largo" id="btn-baixar-mockup">⬇ Baixar imagem da peça (mockup)</button>
+    <p class="dica centro">PNG 300 dpi com fundo transparente, no tamanho da área de impressão. Grátis, uso comercial liberado.</p>
+    <button hidden id="btn-comprar"></button>
+    
+    <button class="btn btn-sec largo" id="btn-visualizar">👀 Visualizar como vai ficar</button>
+    <p class="dica centro">Rascunho salvo automaticamente neste navegador.</p>
+  </div>
+</aside>
+
+<dialog id="dlg-preview" class="dlg-preview">
+  <div class="preview-topo">
+    <h2>É assim que vai ficar</h2>
+    <div class="preview-modos" role="tablist">
+      <button class="ativo" data-modo="3d">🔄 Giro 3D</button>
+      <button data-modo="lados">▦ Todos os lados</button>
+    </div>
+    <form method="dialog"><button class="fechar" aria-label="Fechar">✕</button></form>
+  </div>
+  <div class="preview-3d" id="preview-3d">
+    <div class="cena3d"><div class="peca3d" id="peca3d"><img class="face frente" alt="Frente"><img class="face costas" alt="Costas"></div></div>
+    <input type="range" id="giro" min="0" max="360" value="20" aria-label="Girar">
+    <p class="dica centro">Arraste para girar · as faces são a frente e as costas da sua peça</p>
+  </div>
+  <div class="preview-grid" id="preview-grid" hidden></div>
+  <p class="dica centro" id="preview-info"></p>
+  <div class="cta-row">
+    <button class="btn btn-sec" id="btn-preview-baixar">⬇ Salvar imagem</button>
+    <button class="btn btn-sec" id="btn-preview-compartilhar">↗ Compartilhar</button>
+    <button class="btn btn-primario" id="btn-preview-comprar">⬇ Baixar a arte</button>
+  </div>
+</dialog>
+
+<dialog id="dlg-medidas">
+  <h2>Tabela de medidas (cm)</h2>
+  <table>
+    <thead><tr><th>Tam.</th><th>Largura</th><th>Altura</th></tr></thead>
+    <tbody id="tabela-medidas">
+      <tr><td>P</td><td>50</td><td>70</td></tr><tr><td>M</td><td>53</td><td>72</td></tr><tr><td>G</td><td>56</td><td>74</td></tr><tr><td>GG</td><td>59</td><td>76</td></tr><tr><td>XGG</td><td>63</td><td>78</td></tr>
+    </tbody>
+  </table>
+  <p class="dica">A babylook é mais ajustada: considere um número acima do habitual. Oversized já é largo por definição. Medidas aproximadas, variação de ±2 cm.</p>
+  <form method="dialog"><button class="btn btn-sec">Fechar</button></form>
+</dialog>
+
+<dialog id="dlg-checkout">
+  <form id="form-checkout" novalidate>
+    <h2>Finalizar pedido</h2>
+    <div class="resumo-pedido" id="resumo-pedido"></div>
+    <div class="campos">
+      <label>Nome completo<input name="nome" required autocomplete="name"></label>
+      <label>CPF <small>(exigido pelos Correios)</small><input name="cpf" required inputmode="numeric" placeholder="000.000.000-00" autocomplete="off"></label>
+      <label>E-mail<input name="email" type="email" required autocomplete="email"></label>
+      <label>WhatsApp<input name="telefone" required inputmode="tel" placeholder="(61) 99999-9999" autocomplete="tel"></label>
+      <label>CEP<input name="cep" required inputmode="numeric" placeholder="00000-000" autocomplete="postal-code"></label>
+      <label>Número<input name="numero" required autocomplete="address-line2"></label>
+      <label class="largo">Endereço<input name="logradouro" required autocomplete="address-line1"></label>
+      <label>Complemento<input name="complemento" autocomplete="off"></label>
+      <label>Bairro<input name="bairro" required></label>
+      <label>Cidade<input name="cidade" required readonly></label>
+      <label>UF<input name="uf" required readonly maxlength="2"></label>
+    </div>
+    <div class="frete" id="frete-box"></div>
+    <label class="check"><input type="checkbox" name="aceite" required> Li e aceito os <a href="/termos/" target="_blank">termos</a>, confirmo que tenho direito de uso da arte e sei que peças personalizadas não têm troca por tamanho.</label>
+    <div class="cta-row">
+      <button type="button" class="btn btn-sec" id="btn-fechar-checkout">Voltar</button>
+      <button type="submit" class="btn btn-primario" id="btn-pagar">Ir para o pagamento →</button>
+    </div>
+    <p class="dica centro" id="checkout-msg"></p>
+  </form>
+</dialog>
+
+</main>
+<footer class="rodape">
+  <div class="container">
+    <div class="marca-grande">Monta Camisa</div>
+    
+    <p>© 2026 Monta Camisa · <a href="/estampas/">Estampas</a> · <a href="/criar/">Editor</a> · <a href="/como-usar/">Como usar</a> · <a href="/licenca/">Licença e créditos</a> · <a href="/privacidade/">Privacidade</a> · <a href="/suporte/">Contato</a></p>
+    <p class="aviso">Acervo gratuito de estampas para camiseta, caneca e sublimação. Projeto de Saigg Digital · Raphael Saigg Santos.</p>
+    
+  </div>
+</footer>
+
+<script>
+// medição própria, sem cookies (Worker saigg-app, caminhos com prefixo /mc): visitas e downloads
+(function(){
+  if(location.hostname!=='montacamisa.com.br'||navigator.doNotTrack==='1')return;
+  var API='https://saigg-app.montacamisa.workers.dev/v';
+  function envia(d){try{navigator.sendBeacon(API,JSON.stringify(d))}catch(e){}}
+  var q=new URLSearchParams(location.search);
+  envia({p:'/mc'+location.pathname,r:document.referrer,u:q.get('utm_source')||q.get('ref')||''});
+  window.mcEvento=function(ev,alvo){envia({e:ev,p:'/mc'+location.pathname,a:alvo||''});};
+})();
+</script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/fabric@5.3.0/dist/fabric.min.js"></script>
+<script src="/static/editor.js?v=e6dbbbc9" defer></script>
+
+</body>
+</html>
